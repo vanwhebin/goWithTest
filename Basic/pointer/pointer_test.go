@@ -85,6 +85,9 @@ func TestTableDrivenWallet(t *testing.T) {
 		wallet := Wallet{startingBalance}
 		err := wallet.Withdraw(Bitcoin(100))
 		assertBalance(t, wallet, startingBalance)
+		if err != nil && err.Error() == ErrInsufficientFunds.Error() {
+			return
+		}
 		assertError(t, err)
 	})
 
