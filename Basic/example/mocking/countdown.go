@@ -47,5 +47,4 @@ func main() {
 	sleeper := &ConfigurableSleeper{1 * time.Second, time.Sleep}
 	// CountConsistentDown(os.Stdout)
 	CountDownConfigurable(os.Stdout, sleeper)
-
 }
