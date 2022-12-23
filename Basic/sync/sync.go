@@ -16,3 +16,7 @@ func (counter *Counter) Inc() {
 func (counter *Counter) Value() int {
 	return counter.value
 }
+
+func NewCounter() *Counter {
+	return &Counter{}
+}
